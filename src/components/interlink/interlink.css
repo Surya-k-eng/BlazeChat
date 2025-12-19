@@ -1,0 +1,161 @@
+/* ----------------------- Chat Container ----------------------- */
+.chat {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid #dddddd35;
+  border-right: 1px solid #dddddd35;
+  overflow: hidden;
+}
+
+/* ----------------------- Top Section ----------------------- */
+.chat .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.chat .top .user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.chat .top .user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat .top .user .avatarWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.chat .top .user .avatarWrapper img,
+.chat .top .user .avatarWrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chat .top .user .texts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chat .top .user .texts h1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.chat .top .user .texts p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #a5a5a5;
+}
+
+.chat .top .icons {
+  display: flex;
+  gap: 20px;
+}
+
+.chat .top .icons img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ----------------------- Center Section ----------------------- */
+.chat .center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* ensures zoomed image does not escape */
+  position: relative;
+  background: #000; /* base background when image moves */
+}
+
+/* ----------------------- Map Section ----------------------- */
+.map-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start; /* JS handles exact positioning */
+  align-items: flex-start;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+.map-image {
+  position: absolute; /* absolute to move freely via transform */
+  top: 0;
+  left: 0;
+  width: auto; /* will be scaled in JS */
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: cover; /* fills container, no black bars */
+  transition: transform 0.15s ease-in-out;
+  cursor: grab;
+}
+
+/* ----------------------- Divider ----------------------- */
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0;
+}
+
+/* ----------------------- Bottom / Send Section ----------------------- */
+.chat .bottom {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+.chat .bottom input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.chat .sendButton {
+  padding: 10px 20px;
+  background-color: #4e0eff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.chat .sendButton:disabled {
+  background-color: #e20a0a85;
+  cursor: not-allowed;
+}
+
+/* ----------------------- Emoji Picker ----------------------- */
+.emoji {
+  position: relative;
+}
+
+.picker {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
