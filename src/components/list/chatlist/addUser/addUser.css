@@ -1,5 +1,5 @@
 .addUser{
-    padding: 30px;
+    padding: 10px;
     width: max-content;
     height: max-content;
     background-color: rgba(17, 25, 40, 0.76);
@@ -31,34 +31,39 @@
         background-color: #1a73e8;
         cursor: pointer;
         }
+        .User {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.05); /* Subtle highlight */
+        padding: 15px;
+        border-radius: 12px;
 
-        .User{
-            margin-top: 50px;
+        .detail {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 15px;
 
-            .detail{
-                display: flex;
-                align-items: center;
-                gap: 20px;
+            img {
+                width: 50px;  /* Fixed size */
+                height: 50px; /* Fixed size */
+                border-radius: 50%;
+                object-fit: cover;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background-color: #f2f2f7; /* Fallback background */
+            }
 
-                img{
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                
+            span {
+                font-weight: 500;
+                font-size: 1.1rem;
             }
         }
-        button{
-        padding: 20px;
-        border-radius: 10px;
-        border: none;
-        color: white;
-        background-color: #1a73e8;
-        cursor: pointer;
-        }
 
-}
+        button {
+            padding: 10px 20px; /* Smaller button for the result row */
+            background-color: #007aff; /* Apple Blue */
+            font-size: 14px;
+        }
+    }
 }

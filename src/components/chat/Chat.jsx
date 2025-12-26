@@ -106,10 +106,13 @@ const Chat = () => {
       {/* Top Section */}
       <div className="top">
         <div className="user">
-          <img src="./avatar.png" alt="User Avatar" />
+          <img 
+            src={user?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.username || 'default'}`} 
+            alt="User Avatar" 
+          />
           <div className="texts">
             <h1>{user?.username || "Unknown User"}</h1>
-            <p>BaseBall huh?</p>
+            
           </div>
         </div>
 

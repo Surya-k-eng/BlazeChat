@@ -75,14 +75,18 @@ const AddUser = () => {
       </form>
 
       {user && (
-        <div className="User">
-          <div className="detail">
-            <img src="./avatar.png" alt="avatar" />
-            <span>{user.username}</span>
-          </div>
-          <button onClick={handleAdd}>Add User</button>
-        </div>
-      )}
+  <div className="user">
+    <div className="detail">
+      {/* Use the avatar from the found user object */}
+      <img 
+  src={user.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`} 
+  alt="avatar" 
+/>
+      <span>{user.username}</span>
+    </div>
+    <button onClick={handleAdd}>Add User</button>
+  </div>
+)}
     </div>
   );
 };

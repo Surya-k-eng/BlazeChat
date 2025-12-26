@@ -84,7 +84,10 @@ const ChatList = () => {
           onClick={() => handleSelect(chat)}
           style={{ backgroundColor: chat?.isSeen ? "transparent" : "#5183fe" }}
         >
-          <img src={chat.user?.avatar || "./avatar.png"} alt="avatar" />
+          <img 
+  src={chat.user?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${chat.user?.username}`} 
+  alt="avatar" 
+/>
           <div className="texts">
             <span>{chat.user?.username || "Unknown User"}</span>
             <p>{chat.lastMessage || "No messages yet"}</p>
